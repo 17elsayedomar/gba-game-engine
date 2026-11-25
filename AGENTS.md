@@ -20,6 +20,8 @@ Do not rely on chat history; the repository docs are the source of truth.
 - Keep commits focused, with clear messages.
 - The dev machine uses Windows PowerShell 5.1: never write text files with
   `Set-Content`/`Add-Content`/`>` (they don't write UTF-8). Use editor file tools or Python.
+- Never `git add -A` / `git add .` blindly: the workspace root holds large installer
+  files. Check `git status` and add paths explicitly.
 
 ## Testing
 - Use the status labels in `docs/TESTING.md`. Never claim something works unless it

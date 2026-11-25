@@ -17,9 +17,10 @@ Refinements vs the original brief's phases:
 
 ## Phase 1 — Minimal editor-to-ROM pipeline ("Hello Sprite")
 
-### M1.0 — Toolchain sanity  ⬜
+### M1.0 — Toolchain sanity  ✅ (2026-11-24, emulator verified)
 Build the devkitPro GBA template and run it in mGBA.
 - **Accept:** `make` in a copy of the template exits 0; the `.gba` opens in mGBA; result recorded.
+- **Result:** exit 0 in 5.3 s, 55,600-byte ROM, "Hello World!" in mGBA 0.10.3 (`docs/TESTING.md`).
 
 ### M1.1 — Hand-written "target output"  ⬜
 Write by hand the exact C++ we *want* the generator to produce for one sprite, using a

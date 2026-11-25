@@ -47,8 +47,13 @@ supersedes it and explain why.
   Omar prefers shipping games quickly over owning the runtime.
 
 ## D-003 — Editor UI framework
-- **Date:** 2026-11-24 — **Status:** Proposed — Omar wants a detailed comparison first:
-  see `docs/EDITOR_FRAMEWORKS.md`.
+- **Date:** 2026-11-24 — **Status:** Proposed — narrowed to **A (ImGui) vs C (Qt)** by
+  Omar. Equivalent prototypes built and measured 2026-11-25 (`prototypes/`,
+  `docs/EDITOR_FRAMEWORKS.md`). **Not to be finalized until Omar has tested both
+  prototypes himself and we have discussed the results.**
+- **Constraint (Omar, any option):** the desktop UI stays separate from the project
+  model, code generator, asset pipeline, build system and GBA runtime; no Qt or
+  ImGui types in shared libraries.
 - **Problem:** Which desktop UI technology for the editor.
 - **Options:**
 

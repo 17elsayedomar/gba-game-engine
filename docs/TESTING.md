@@ -29,18 +29,38 @@ Never report a result that was not actually observed.
 Every sample project in `samples/` doubles as a regression test.
 
 ## Commands
-None yet — added when the first test target exists (M1.1/M1.2).
+
+```powershell
+# Editor-framework prototypes: shared core tests (doctest)
+cmake --build build/prototypes --config Release --target proto_core_tests
+build\prototypes\proto_core\Release\proto_core_tests.exe
+
+# Editor-framework prototypes: performance measurements (about 5 minutes)
+powershell -ExecutionPolicy Bypass -File prototypes\tools\measure.ps1
+
+# M1.0: build the devkitPro GBA template (copy it somewhere first)
+C:\devkitPro\msys2\usr\bin\bash.exe -lc 'cd "/c/path/to/copy" && make'
+```
 
 ## Manual test procedures
-None yet.
+- **Editor prototypes (D-003):** checklist in `prototypes/README.md`, done in both prototypes.
 
 ## Recent results
 | Date | What | Result | Label |
 |---|---|---|---|
 | 2026-11-24 | Environment inventory (tools present/absent) | See PROJECT.md table | Observed via shell |
+| 2026-11-24 | **M1.0** devkitPro GBA template (`C:\devkitPro\examples\gba\template`, copied) | `make` exit 0 in 5.3 s; ROM 55,600 bytes; mGBA 0.10.3 shows "Hello World!" at 59.9 fps (re-checked 2026-11-25) | **Emulator verified** (screenshot inspected by the assistant) |
+| 2026-11-25 | `proto_core` tests: commands/undo/merge, components, PNG import + GBA colors, byte-identical save/load, garbage input, deterministic codegen, iso projection/picking, viewport picking, node graph | 13/13 cases, 199/199 assertions pass | **Automatically tested** |
+| 2026-11-25 | Both prototypes start, load `sample_scene.json`, render it | Screenshots inspected: panels docked, GBA frame, sprites in GBA colors | Automatically smoke-tested (not a full manual test) |
+| 2026-11-25 | Scripted drag, 60 moves/s through the real command path (`--benchmark-drag`) | No errors; ImGui holds 57 fps (VSync) | Automatically smoke-tested |
+| 2026-11-25 | Startup, idle/drag CPU, memory, build times, sizes, lines of code | See `docs/EDITOR_FRAMEWORKS.md` section 2 | Measured on Omar's laptop |
+| — | The 14 prototype features by hand | Pending: Omar's checklist | Implemented, untested |
 
 ## Known limitations
-- devkitPro not yet installed, so no ROM can be built.
+- No automatic UI tests: prototype UIs are checked by screenshots and by hand.
+- Measurements come from one machine and one run per configuration (startup: median of 5).
+  The drag CPU numbers varied by about ±3 percentage points between runs.
+- Avast scans every newly built `.exe` on its first launch, so first-run timings are discarded.
 - mGBA automation method not yet chosen.
 - Real hardware: Omar has a GBA and a flash cartridge (model not yet recorded).
   Hardware test procedure to be written at M1.1.
