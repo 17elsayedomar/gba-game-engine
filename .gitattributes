@@ -1,0 +1,10 @@
+# Text files are stored with LF line endings so generated-code golden tests
+# compare identically on Windows, Linux and macOS.
+* text=auto eol=lf
+
+*.png  binary
+*.bmp  binary
+*.gba  binary
+*.bin  binary
+*.exe  binary
+*.zip  binary

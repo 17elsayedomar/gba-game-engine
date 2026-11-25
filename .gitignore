@@ -1,0 +1,31 @@
+# --- Local installers kept in the workspace root (not part of the project) ---
+/devkitProUpdater-*.exe
+/devkitprosource-installer-*.zip
+/portable-pn*.zip
+/msys-*.7z
+/devkitProUpdate.ini
+aqtinstall.log
+
+# --- Build output (host and GBA) ---
+build/
+out/
+*.elf
+*.gba
+*.sav
+*.ss[0-9]
+*.map
+*.o
+*.d
+
+# --- Binary prototype dependency, downloaded by prototypes/fetch_deps.ps1 ---
+/prototypes/third_party/SDL3/
+
+# --- Per-project caches created by the editor/CLI ---
+.gbs/
+
+# --- IDE / OS noise ---
+.vs/
+.vscode/
+*.user
+Thumbs.db
+.DS_Store
