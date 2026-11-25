@@ -1,0 +1,82 @@
+{
+  "assets": [
+    {
+      "id": 1,
+      "name": "robot.png",
+      "path": "sample_assets/robot.png"
+    },
+    {
+      "id": 2,
+      "name": "coin.png",
+      "path": "sample_assets/coin.png"
+    }
+  ],
+  "format": "gbe.prototype.scene",
+  "formatVersion": 1,
+  "graph": {
+    "links": [
+      [1, 0, 2, 0]
+    ],
+    "nodes": [
+      {
+        "id": 1,
+        "inputs": [],
+        "outputs": ["Pressed"],
+        "position": [20, 40],
+        "title": "On Button Pressed (A)"
+      },
+      {
+        "id": 2,
+        "inputs": ["Run"],
+        "outputs": ["Done"],
+        "position": [260, 80],
+        "title": "Play Animation (Jump)"
+      }
+    ]
+  },
+  "iso": {
+    "depth": 6,
+    "heights": [0, 0, 0, 0, 0, 0,
+                0, 1, 2, 0, 0, 0,
+                0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 3, 0,
+                0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0],
+    "width": 6
+  },
+  "name": "Main",
+  "nextId": 7,
+  "objects": [
+    {
+      "components": [
+        { "type": "SpriteRenderer", "values": [1, 1] },
+        { "type": "Collider", "values": [16, 16] }
+      ],
+      "id": 3,
+      "name": "Player",
+      "position": [100, 60, 1]
+    },
+    {
+      "components": [
+        { "type": "SpriteRenderer", "values": [2, 1] }
+      ],
+      "id": 4,
+      "name": "Coin",
+      "position": [40, 120, 0]
+    },
+    {
+      "components": [
+        { "type": "SpriteRenderer", "values": [2, 1] }
+      ],
+      "id": 5,
+      "name": "Coin",
+      "position": [180, 40, 0]
+    },
+    {
+      "components": [],
+      "id": 6,
+      "name": "Empty Box",
+      "position": [200, 120, 0]
+    }
+  ]
+}

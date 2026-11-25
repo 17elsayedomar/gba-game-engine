@@ -22,6 +22,8 @@ out/
 
 # --- Per-project caches created by the editor/CLI ---
 .gbs/
+# Dear ImGui saves the panel layout here, in whatever folder the editor runs from
+imgui.ini
 
 # --- IDE / OS noise ---
 .vs/
